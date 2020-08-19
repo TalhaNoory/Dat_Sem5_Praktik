@@ -8,3 +8,5 @@ Disse emner skal læses op, samt prøves af.
 6. Iterators
 7. Objects
 8. Classes
+
+Local Environment 
