@@ -1,15 +1,11 @@
 import React, { useState } from 'react'
 
-const PokemonsList = () => {
-    const [pokemons] = useState([
-        { id: 1, name: 'Bulbasaur' },
-        { id: 2, name: 'Charmander' },
-        { id: 3, name: 'Squirtle' }
-    ])
+const CapturedPokemons = () => {
+    const [pokemons] = useState([])
 
     return (
-        <div className="pokemons-List">
-            <h2>Pokemons List</h2>
+        <div className="Pokedex">
+            <h2>Captured Pokemons</h2>
 
             {pokemons.map((pokemon) =>
                 <div key={`${pokemon.id}-${pokemon.name}`}>
@@ -20,4 +16,4 @@ const PokemonsList = () => {
     )
 }
 
-export default PokemonsList;
+export default CapturedPokemons;
