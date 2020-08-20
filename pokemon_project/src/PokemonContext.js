@@ -9,13 +9,13 @@ export const PokemonProvider = (props) => {
         {id: 3, name: 'Squirtle'}
     ]);
 
-    const [capturedPokemons, setCapturedPokemons] = useState([]);
+    const [pokemons, setCapturedPokemons] = state;
 
     const providerValue = {
         pokemons,
         setPokemons,
-        capturedPokemons,
-        setCapturedPokemons
+        release,
+        capture
     }
 
     return (
