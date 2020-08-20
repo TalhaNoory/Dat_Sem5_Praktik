@@ -1,13 +1,16 @@
 import React from 'react'
 import PokemonsList from './PokemonList'
 import Pokedex from './Pokedex'
+import PokemonProvider from './PokemonContext'
 
 function App() {
   return (
-    <>
-    <PokemonsList/>
-    <Pokedex/>
-    </>
+    <PokemonProvider>
+      <>
+        <PokemonsList />
+        <Pokedex />
+      </>
+    </PokemonProvider>
   );
 }
 
