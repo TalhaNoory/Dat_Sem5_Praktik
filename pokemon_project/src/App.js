@@ -1,7 +1,8 @@
 import React from 'react'
-import PokemonsList from './PokemonList'
-import Pokedex from './Pokedex'
-import PokemonProvider from './PokemonContext'
+import PokemonsList from './components/PokemonList'
+import Pokedex from './components/Pokedex'
+import PokemonProvider from './components/PokemonContext'
+import PokemonForm from './components/PokemonForm'
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
         <PokemonsList />
         <Pokedex />
       </>
+      <PokemonForm/>
     </PokemonProvider>
   );
 }
