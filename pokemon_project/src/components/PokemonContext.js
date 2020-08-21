@@ -1,5 +1,5 @@
 import React, {createContext, useState} from 'react'
-import { CAPTURE, RELEASE } from './PokemonReducer';
+import { CAPTURE, RELEASE, ADD_POKEMON } from './PokemonReducer';
 
 export const PokemonContext = createContext();
 
@@ -13,13 +13,18 @@ export const PokemonProvider = (props) => {
         dispatch({type: RELEASE, pokemon});
     };
 
-    const { pokemons, setCapturedPokemons } = state;
+    const addPokemon = (pokemon) => {
+        dispatch({ type: ADD_POKEMON, pokemon });
+    };
+
+    const { pokemons, capturedPokemons } = state;
 
     const providerValue = {
         pokemons,
-        setPokemons,
+        capturedPokemons,
         release,
-        capture
+        capture,
+        addPokemon
     }
 
     return (
