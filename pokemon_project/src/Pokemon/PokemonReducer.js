@@ -1,42 +1,5 @@
-export const CAPTURE = 'CAPTURE'
-export const RELEASE = 'RELEASE'
-export const ADD_POKEMON = 'ADD_POKEMON'
-
-const defaultState = {
-    pokemons: [
-        { id: 1, name: 'Bulbasaur' },
-        { id: 2, name: 'Charmander' },
-        { id: 3, name: 'Squirtle' }
-    ],
-    capturedPokemons: []
-};
-
-const [state, dispatch] = useReducer(pokemonReducer, defaultState);
-
-const pokemonReducer = (state, action) => { //Returns the neww state based on the action type
-    switch (action.type) {
-        case CAPTURE:
-            // handle capture and return new state
-            return capturePokemon(action.pokemon, state)
-        case RELEASE:
-            // handle release and return new state
-            return releasedPokemon(action.pokemon, state)
-        case ADD_POKEMON:
-            // handle adds and return new state
-            return addPokemon(action.pokemon, state)
-        default:
-            return state
-    }
-}
-
-// Capture function
-const getPokemonList = (pokemons, capturedPokemon) =>
-    pokemons.filter(pokemon => pokemon !== capturedPokemon)
-
-const capturePokemon = (pokemon, state) => ({
-    pokemons: getPokemonList(state, pokemon),
-    capturedPokemons: [...state.capturedPokemons, pokemon]
-});
+import { useReducer } from 'react'
+import { CAPTURE, RELEASE, ADD_POKEMON, ADD_POKEMONS } from './actions'
 
 // Release function
 const getCapturedPokemons = (capturedPokemons, releasedPokemon) =>
@@ -47,7 +10,46 @@ const releasedPokemon = (releasedPokemon, state) => ({
     capturedPokemons: getCapturedPokemons(state.capturedPokemons, releasedPokemon)
 });
 
+// Capture function
+const getPokemonsList = (pokemons, capturedPokemon) =>
+    pokemons.filter(pokemon => pokemon !== capturedPokemon)
+
+const capturePokemon = (pokemon, state) => ({
+    pokemons: getPokemonsList(state, pokemon),
+    capturedPokemons: [...state.capturedPokemons, pokemon]
+});
+
 const addPokemon = (pokemon, state) => ({
-    ...state,
     pokemons: [...state.pokemons, pokemon],
-  });
+    capturedPokemon: state.capturedPokemons
+});
+
+const addPokemons = (pokemons, state) => ({
+    pokemons: pokemon,
+    capturedPokemons: state.capturedPokemons
+})
+
+const pokemonReducer = (state, action) => { //Returns the neww state based on the action type
+    switch (action.type) {
+        case CAPTURE:
+            // handle capture and return new state
+            return capturePokemon(action.pokemon, state)
+        case RELEASE:
+            // handle release and return new state
+            return releasedPokemon(action.pokemon, state)
+        case ADD_POKEMON:
+            // handle add 1 pokemon and return new state
+            return addPokemon(action.pokemon, state)
+        case ADD_POKEMONS:
+            // handle add multiple pokemon and return new state
+            return addPokemons(action.pokemon, state)
+        default:
+            return state
+    }
+}
+
+export const usePokemonReducer = () =>
+    useReducer(pokemonReducer, {
+        pokemons: [],
+        capturedPokemons: []
+    })
