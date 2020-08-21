@@ -1,30 +1,26 @@
-import React, {createContext, useState} from 'react'
-import { CAPTURE, RELEASE, ADD_POKEMON } from './PokemonReducer';
+import React, {createContext} from 'react'
+import { usePokemonReducer } from './PokemonReducer'
+import { CAPTURE, RELEASE, ADD_POKEMON, ADD_POKEMONS } from './PokemonReducer';
 
-export const PokemonContext = createContext();
+const PokemonContext = createContext();
 
-export const PokemonProvider = (props) => {
+const PokemonProvider = (props) => {
 
-    const capture = (pokemon) => () => {
-        dispatch({type: CAPTURE, pokemon});
-    };
+    const [state, dispatch] = usePokemonReducer();
+    const { pokemons, capturedPokemons } = state 
 
-    const release = (pokemon) => () => {
-        dispatch({type: RELEASE, pokemon});
-    };
-
-    const addPokemon = (pokemon) => {
-        dispatch({ type: ADD_POKEMON, pokemon });
-    };
-
-    const { pokemons, capturedPokemons } = state;
+    const capture = (pokemon)  => dispatch({type: CAPTURE, pokemon});
+    const release = (pokemon)  => dispatch({type: RELEASE, pokemon});
+    const addPokemon = (pokemon) => dispatch({ type: ADD_POKEMON, pokemon });
+    const addPokemons = (pokemon) => dispatch({type: ADD_POKEMONS, pokemon});
 
     const providerValue = {
         pokemons,
         capturedPokemons,
         release,
         capture,
-        addPokemon
+        addPokemon,
+        addPokemons
     }
 
     return (
@@ -34,4 +30,4 @@ export const PokemonProvider = (props) => {
     );
 }
 
-export default PokemonProvider;
+export default { PokemonContext, PokemonProvider};
