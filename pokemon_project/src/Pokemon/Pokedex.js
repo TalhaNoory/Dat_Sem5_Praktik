@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { PokemonContext } from './PokemonContext';
-import PokemonsList from './PokemonsList'
+import { listPokemons } from './listPokemons'
 
 const Pokedex = () => {
     const { capturedPokemons, release } = useContext(PokemonContext);
@@ -14,7 +14,7 @@ const Pokedex = () => {
                     <th>Pokemon</th>
                     <th>Release</th>
                 </tr>
-                {PokemonsList({
+                {listPokemons({
                     pokemons: capturedPokemons,
                     onClick: release,
                     buttonLabel: '-'

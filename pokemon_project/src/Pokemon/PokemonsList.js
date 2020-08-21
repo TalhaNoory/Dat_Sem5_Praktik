@@ -1,10 +1,11 @@
 import React, { useContext, useEffect } from 'react'
 import { PokemonContext } from './PokemonContext'
+import { listPokemons } from './listpokemons'
 
 const url = "https://pokeapi.co/api/v2/pokemon"
 
 const PokemonsList = () => {
-    const { state, capture, addPokemons } = useContext(PokemonContext);
+    const { pokemons, capture, addPokemons } = useContext(PokemonContext);
 
     useEffect(() => {
         const fetchPokemons = async () => {
@@ -20,11 +21,18 @@ const PokemonsList = () => {
         <div className="pokemons-List">
             <h2>Pokemons List</h2>
 
-            {pokemons.map((pokemon) =>
-                <div key={`${pokemon.id}-${pokemon.name}`}>
-                    <span>{pokemon.name}</span>
-                    <button onClick={capture(pokemon)}>+</button>
-                </div>)}
+
+            <table>
+                <tr>
+                    <th>Pokemon</th>
+                    <th>Capture</th>
+                </tr>
+                {listPokemons({
+                    pokemons,
+                    onClick: capture,
+                    buttonLabel: '+'
+                })}
+            </table>
         </div>
     )
 }

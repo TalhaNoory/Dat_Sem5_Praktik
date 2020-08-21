@@ -42,7 +42,7 @@ const pokemonReducer = (state, action) => { //Returns the neww state based on th
             return addPokemon(action.pokemon, state)
         case ADD_POKEMONS:
             // handle add multiple pokemon and return new state
-            return addPokemons(action.pokemon, state)
+            return addPokemons(action.pokemons, state)
         default:
             return state
     }

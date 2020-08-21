@@ -6,7 +6,9 @@ const PokemonForm = () => {
     const [pokemonName, setPokemonName] = useState();
     const { addPokemon } = useContext(PokemonContext);
 
-    const handleNameOnChange = (e) => setPokemonName(e.target.value);
+    const handleNameOnChange = (e) => {
+        setPokemonName(e.target.value);
+    }
 
     const handleFormSubmit = (e) => {
         e.preventDefault();
@@ -19,7 +21,7 @@ const PokemonForm = () => {
     return (
         <form onSubmit={handleFormSubmit}>
             <input type="text" placeholder="pokemon name" onChange={handleNameOnChange} />
-            <input type="submit" value="Add"/>
+            <input type="submit" value="Add" />
         </form>
     )
 }
