@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { PokemonProvider } from './Pokemon/PokemonContext'
+import PokemonProvider from './Pokemon/PokemonContext'
 import PokemonsList from './Pokemon/PokemonsList'
 import Pokedex from './Pokemon/Pokedex'
 import PokemonForm from './Pokemon/PokemonForm'

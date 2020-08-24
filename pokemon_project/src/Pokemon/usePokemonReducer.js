@@ -24,7 +24,7 @@ const addPokemon = (pokemon, state) => ({
     capturedPokemon: state.capturedPokemons
 });
 
-const addPokemons = (pokemons, state) => ({
+const addPokemons = (pokemon, state) => ({
     pokemons: pokemon,
     capturedPokemons: state.capturedPokemons
 })
