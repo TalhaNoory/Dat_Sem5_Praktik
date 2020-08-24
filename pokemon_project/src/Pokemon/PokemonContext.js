@@ -30,4 +30,5 @@ const PokemonProvider = (props) => {
     );
 }
 
-export default { PokemonContext, PokemonProvider};
+export default PokemonProvider;
+export { PokemonContext };

@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from 'react'
-import PokemonContext from './PokemonContext'
+import { PokemonContext } from './PokemonContext'
 import { listPokemons } from './listPokemons'
 
 const url = "https://pokeapi.co/api/v2/pokemon"

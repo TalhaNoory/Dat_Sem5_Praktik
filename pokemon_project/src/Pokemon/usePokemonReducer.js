@@ -6,7 +6,7 @@ const getCapturedPokemons = (capturedPokemons, releasedPokemon) =>
     capturedPokemons.filter(pokemon => pokemon !== releasedPokemon);
 
 const releasedPokemon = (releasedPokemon, state) => ({
-    peokmons: [...state.pokemons, releasedPokemon],
+    pokemons: [...state.pokemons, releasedPokemon],
     capturedPokemons: getCapturedPokemons(state.capturedPokemons, releasedPokemon)
 });
 
