@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import PokemonList from './Components/PokemonList'
-// import uuidv4 from 'uuid/dist/v4'
+import uuidv4 from 'uuid/dist/v4'
 
 const LOCAL_STORAGE_KEY = 'pokemonApp.pokemons'
 
@@ -21,7 +21,7 @@ function App() {
   function togglePokemon(id) {
     const newPokemons = [...pokemons]
     const pokemon = newPokemons.find(pokemon => pokemon.id === id)
-    pokemon.comeplete = !pokemon.comeplete
+    pokemon.complete = !pokemon.complete
     setPokemons(newPokemons)
   }
 
@@ -29,13 +29,13 @@ function App() {
     const name = pokemonNameRef.current.value
     if (name === '') return
     setPokemons(prevPokemons => {
-      return [...prevPokemons, {id: 1, name: name, comeplete: false}]
+      return [...prevPokemons, {id: uuidv4(), name: name, complete: false}]
     })
     pokemonNameRef.current.value = null
   }
 
   function handleClearPokemons() {
-    const newPokemons = pokemons.filter(pokemon => !pokemon.comeplete)
+    const newPokemons = pokemons.filter(pokemon => !pokemon.complete)
     setPokemons(newPokemons)
   }
 
@@ -45,7 +45,7 @@ function App() {
       <input ref={pokemonNameRef} type='text' />
       <button onClick={handleAddPokemon}>Add Pokemon</button>
       <button onClick={handleClearPokemons}>Clear Complete</button>
-      <p>Pokemons you've found total [{pokemons.filter(pokemon => !pokemon.comeplete).length}]</p>
+      <p>Pokemons you've found total [{pokemons.filter(pokemon => !pokemon.complete).length}]</p>
     </div>
   );
 }
