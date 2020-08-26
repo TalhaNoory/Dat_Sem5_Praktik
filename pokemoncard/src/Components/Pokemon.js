@@ -13,7 +13,8 @@ export default function Pokemon({ pokemon, togglePokemon }) {
                     type="checkbox"
                     checked={pokemon.complete}
                     onChange={handlePokemonClick} />
-                {pokemon.name}
+                {this.props.pokemon.name}
+
             </label>
         </div>
     )

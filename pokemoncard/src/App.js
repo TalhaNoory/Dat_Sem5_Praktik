@@ -29,7 +29,7 @@ function App() {
     const name = pokemonNameRef.current.value
     if (name === '') return
     setPokemons(prevPokemons => {
-      return [...prevPokemons, {id: uuidv4(), name: name, complete: false}]
+      return [...prevPokemons, { id: uuidv4(), name: name, url: url, complete: false }]
     })
     pokemonNameRef.current.value = null
   }
@@ -43,6 +43,7 @@ function App() {
     <div>
       <PokemonList pokemons={pokemons} togglePokemon={togglePokemon} />
       <input ref={pokemonNameRef} type='text' />
+      <input type='text' />
       <button onClick={handleAddPokemon}>Add Pokemon</button>
       <button onClick={handleClearPokemons}>Clear Complete</button>
       <p>Pokemons you've found total [{pokemons.filter(pokemon => !pokemon.complete).length}]</p>
