@@ -1,6 +1,6 @@
 import React from 'react'
 
-class NameForm extends React.Component {
+class PokemonForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -41,8 +41,8 @@ class NameForm extends React.Component {
     handleSubmit(event) {
         alert(`
         A Pokemon has been added to the list: 
-            ${this.state.name}
-            ${this.state.type}
+           Name:   ${this.state.name}
+           Type:     ${this.state.type}
             `);
         event.preventDefault();
     }
@@ -54,13 +54,11 @@ class NameForm extends React.Component {
                     <input
                         type="text"
                         name="name"
-                        value={this.state.value}
                         onChange={this.handleName} />
                     {/* <div>{this.state.name}</div> */}
                     <input
                         type="text"
                         name="type"
-                        value={this.state.value}
                         onChange={this.handleType} />
                     {/* <div>{this.state.type}</div> */}
                     <input type="submit" value="Add Pokemon" />
@@ -68,13 +66,13 @@ class NameForm extends React.Component {
 
                 <div>
                     {/* {Map goes here!} */}
-                    {/* {this.state.pokemons.map((pokemon, id) =>
-                        <li key={id} pokemon={pokemon.name} />
-                    )} */}
+                    {this.state.pokemons.map((pokemon, id) =>
+                        <li key={id} value={pokemon} />
+                    )}
                 </div>
             </div>
         );
     }
 }
 
-export default NameForm;
+export default PokemonForm;
