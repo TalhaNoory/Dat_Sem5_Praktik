@@ -5,7 +5,7 @@ class NameForm extends React.Component {
         super(props);
         this.state = {
             pokemons: [{
-                id:'',
+                id: '',
                 name: '',
                 type: '',
             }]
@@ -35,6 +35,7 @@ class NameForm extends React.Component {
         this.setState({
             type: event.target.value
         })
+
     }
 
     handleSubmit(event) {
@@ -55,17 +56,20 @@ class NameForm extends React.Component {
                         name="name"
                         value={this.state.value}
                         onChange={this.handleName} />
+                    {/* <div>{this.state.name}</div> */}
                     <input
                         type="text"
                         name="type"
                         value={this.state.value}
                         onChange={this.handleType} />
+                    {/* <div>{this.state.type}</div> */}
                     <input type="submit" value="Add Pokemon" />
                 </form>
+
                 <div>
                     {/* {Map goes here!} */}
-                    {/* {this.state.pokemons.map((pokemon) =>
-                        <li key={pokemon.id}>{pokemon}</li>
+                    {/* {this.state.pokemons.map((pokemon, id) =>
+                        <li key={id} pokemon={pokemon.name} />
                     )} */}
                 </div>
             </div>
