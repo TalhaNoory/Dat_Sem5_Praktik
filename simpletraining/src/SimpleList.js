@@ -4,38 +4,38 @@ class NameForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            names: '',
-            pokemons: [
-                {
-                    name: '',
-                    type: '',
-                }
-            ]
+            pokemons: [{
+                id:'',
+                name: '',
+                type: '',
+            }]
         };
 
+        // this.handlePokemons = this.handlePokemons.bind(this)
         this.handleName = this.handleName.bind(this);
         this.handleType = this.handleType.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
+    // handlePokemons(event) {
+    //     this.setState([{
+    //         name: event.target.value,
+    //         type: event.target.value
+    //     }])
+
+    // }
+
     handleName(event) {
         this.setState({
-            name: event.target.name && event.target.value
+            name: event.target.value
         });
     }
 
     handleType(event) {
         this.setState({
-            type: event.target.name && event.target.value
+            type: event.target.value
         })
     }
-
-    // handleChange(event) {
-    //     this.setState({
-    //         name: event.target.value,
-    //         type: event.target.value
-    //     });
-    // }
 
     handleSubmit(event) {
         alert(`
@@ -64,6 +64,9 @@ class NameForm extends React.Component {
                 </form>
                 <div>
                     {/* {Map goes here!} */}
+                    {/* {this.state.pokemons.map((pokemon) =>
+                        <li key={pokemon.id}>{pokemon}</li>
+                    )} */}
                 </div>
             </div>
         );
