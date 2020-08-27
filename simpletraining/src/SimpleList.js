@@ -4,23 +4,36 @@ class NameForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            name: '',
+            names: '',
             pokemon: {
                 name: '',
                 type: ''
             }
         };
 
-        this.handleChange = this.handleChange.bind(this);
+        this.handleName = this.handleName.bind(this);
+        this.handleType = this.handleType.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    handleChange(event) {
+    handleName(event) {
         this.setState({
-            name: event.target.value,
-            type: event.target.value
+            name: event.target.name && event.target.value
         });
     }
+
+    handleType(event) {
+        this.setState({
+            type: event.target.name && event.target.value
+        })
+    }
+
+    // handleChange(event) {
+    //     this.setState({
+    //         name: event.target.value,
+    //         type: event.target.value
+    //     });
+    // }
 
     handleSubmit(event) {
         alert(`
@@ -37,14 +50,14 @@ class NameForm extends React.Component {
                 <form onSubmit={this.handleSubmit}>
                     <input
                         type="text"
-                        name="pokemon"
-                        value={this.state.pokemon.value}
-                        onChange={this.handleChange} />
+                        name="name"
+                        value={this.state.value}
+                        onChange={this.handleName} />
                     <input
                         type="text"
-                        name="pokemon"
-                        value={this.state.pokemon.value}
-                        onChange={this.handleChange} />
+                        name="type"
+                        value={this.state.value}
+                        onChange={this.handleType} />
                     <input type="submit" value="Add Pokemon" />
                 </form>
                 <div>
