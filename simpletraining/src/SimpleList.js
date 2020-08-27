@@ -5,10 +5,12 @@ class NameForm extends React.Component {
         super(props);
         this.state = {
             names: '',
-            pokemon: {
-                name: '',
-                type: ''
-            }
+            pokemons: [
+                {
+                    name: '',
+                    type: '',
+                }
+            ]
         };
 
         this.handleName = this.handleName.bind(this);
