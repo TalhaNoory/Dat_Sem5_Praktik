@@ -1,19 +1,20 @@
 import React from 'react'
+import ID from 'react-html-id'
 
 class PokemonForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            pokemons: [{
-                id: '',
-                name: '',
-                type: '',
-            }]
+            pokemons: [
+                {id: ID},
+                {name: ''},
+                {img: ''},
+            ]
         };
 
         // this.handlePokemons = this.handlePokemons.bind(this)
         this.handleName = this.handleName.bind(this);
-        this.handleType = this.handleType.bind(this);
+        this.handleImage = this.handleImage.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
@@ -31,9 +32,9 @@ class PokemonForm extends React.Component {
         });
     }
 
-    handleType(event) {
+    handleImage(event) {
         this.setState({
-            type: event.target.value
+            img: event.target.value
         });
     }
 
@@ -41,7 +42,7 @@ class PokemonForm extends React.Component {
         alert(`
         A Pokemon has been added to the list: 
            Name:   ${this.state.name}
-           Type:     ${this.state.type}
+           Image:     ${this.state.img}
             `);
         event.preventDefault();
     }
@@ -57,16 +58,16 @@ class PokemonForm extends React.Component {
                     {/* <div>{this.state.name}</div> */}
                     <input
                         type="text"
-                        name="type"
-                        onChange={this.handleType} />
+                        name="img"
+                        onChange={this.handleImage} />
                     {/* <div>{this.state.type}</div> */}
                     <input type="submit" value="Add Pokemon" />
                 </form>
 
                 <div>
                     {/* {Map goes here!} */}
-                    {this.state.pokemons.map((pokemon) =>
-                        <p key={pokemon.id} value={pokemon} />
+                    {this.state.pokemons.map((pokemon, id) =>
+                        <p key={id} value={pokemon.name} />
                     )}
                 </div>
             </div>
