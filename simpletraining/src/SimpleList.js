@@ -1,77 +1,77 @@
-// import React from 'react'
+import React from 'react'
 
-// class PokemonForm extends React.Component {
-//     constructor(props) {
-//         super(props);
-//         this.state = {
-//             pokemons: [{
-//                 id: '',
-//                 name: '',
-//                 type: '',
-//             }]
-//         };
+class PokemonForm extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            pokemons: [{
+                id: '',
+                name: '',
+                type: '',
+            }]
+        };
 
-//         // this.handlePokemons = this.handlePokemons.bind(this)
-//         this.handleName = this.handleName.bind(this);
-//         this.handleType = this.handleType.bind(this);
-//         this.handleSubmit = this.handleSubmit.bind(this);
-//     }
+        // this.handlePokemons = this.handlePokemons.bind(this)
+        this.handleName = this.handleName.bind(this);
+        this.handleType = this.handleType.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
 
-//     // handlePokemons(event) {
-//     //     this.setState([{
-//     //         name: event.target.value,
-//     //         type: event.target.value
-//     //     }])
+    // handlePokemons(event) {
+    //     this.setState([{
+    //         name: event.target.value,
+    //         type: event.target.value
+    //     }])
 
-//     // }
+    // }
 
-//     handleName(event) {
-//         this.setState({
-//             name: event.target.value
-//         });
-//     }
+    handleName(event) {
+        this.setState({
+            name: event.target.value
+        });
+    }
 
-//     handleType(event) {
-//         this.setState({
-//             type: event.target.value
-//         });
-//     }
+    handleType(event) {
+        this.setState({
+            type: event.target.value
+        });
+    }
 
-//     handleSubmit(event) {
-//         alert(`
-//         A Pokemon has been added to the list: 
-//            Name:   ${this.state.name}
-//            Type:     ${this.state.type}
-//             `);
-//         event.preventDefault();
-//     }
+    handleSubmit(event) {
+        alert(`
+        A Pokemon has been added to the list: 
+           Name:   ${this.state.name}
+           Type:     ${this.state.type}
+            `);
+        event.preventDefault();
+    }
 
-//     render() {
-//         return (
-//             <div>
-//                 <form onSubmit={this.handleSubmit}>
-//                     <input
-//                         type="text"
-//                         name="name"
-//                         onChange={this.handleName} />
-//                     {/* <div>{this.state.name}</div> */}
-//                     <input
-//                         type="text"
-//                         name="type"
-//                         onChange={this.handleType} />
-//                     {/* <div>{this.state.type}</div> */}
-//                     <input type="submit" value="Add Pokemon" />
-//                 </form>
+    render() {
+        return (
+            <div>
+                <form onSubmit={this.handleSubmit}>
+                    <input
+                        type="text"
+                        name="name"
+                        onChange={this.handleName} />
+                    {/* <div>{this.state.name}</div> */}
+                    <input
+                        type="text"
+                        name="type"
+                        onChange={this.handleType} />
+                    {/* <div>{this.state.type}</div> */}
+                    <input type="submit" value="Add Pokemon" />
+                </form>
 
-//                 <div>
-//                     {/* {Map goes here!} */}
-//                     {this.state.pokemons.map((pokemon, id) =>
-//                         <p key={id} value={pokemon} />
-//                     )}
-//                 </div>
-//             </div>
-//         );
-//     }
-// }
+                <div>
+                    {/* {Map goes here!} */}
+                    {this.state.pokemons.map((pokemon) =>
+                        <p key={pokemon.id} value={pokemon} />
+                    )}
+                </div>
+            </div>
+        );
+    }
+}
 
-// export default PokemonForm;
+export default PokemonForm;
