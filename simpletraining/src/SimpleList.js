@@ -1,30 +1,27 @@
 import React from 'react'
-import ID from 'react-html-id'
+// import RU from 'react-update'
+// import CUID from 'cuid'
+import {v5 as uuid} from 'uuid'
 
 class PokemonForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            pokemons: [
-                {id: ID},
-                {name: ''},
-                {img: ''},
-            ]
+            pokemon: [
+                { id: uuid, name: '', img: '' }
+            ],
+            // pokemons: [
+            //     { id: cuid },
+            //     { name: '' },
+            //     { img: '' },
+            // ]
         };
 
-        // this.handlePokemons = this.handlePokemons.bind(this)
         this.handleName = this.handleName.bind(this);
         this.handleImage = this.handleImage.bind(this);
+        this.handleID = this.handleID.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this);
     }
-
-    // handlePokemons(event) {
-    //     this.setState([{
-    //         name: event.target.value,
-    //         type: event.target.value
-    //     }])
-
-    // }
 
     handleName(event) {
         this.setState({
@@ -38,13 +35,28 @@ class PokemonForm extends React.Component {
         });
     }
 
+    handleID(event) {
+        this.setState({
+            id: event.target.value
+        })
+    }
+
     handleSubmit(event) {
         alert(`
-        A Pokemon has been added to the list: 
-           Name:   ${this.state.name}
-           Image:     ${this.state.img}
+        A Pokemon has been added to the list:
+           
+           Name:    ${this.state.name}
+           Image:   ${this.state.img}
+           id:      ${this.state.id}
             `);
         event.preventDefault();
+        this.setState({
+            pokemon: [{
+                name: this.state.name,
+                img: this.state.img,
+                id: this.state.id
+            }],
+        })
     }
 
     render() {
@@ -53,21 +65,24 @@ class PokemonForm extends React.Component {
                 <form onSubmit={this.handleSubmit}>
                     <input
                         type="text"
-                        name="name"
                         onChange={this.handleName} />
-                    {/* <div>{this.state.name}</div> */}
                     <input
                         type="text"
-                        name="img"
                         onChange={this.handleImage} />
-                    {/* <div>{this.state.type}</div> */}
-                    <input type="submit" value="Add Pokemon" />
+                    <input
+                        type="submit"
+                        value="Add Pokemon"
+                        onChange={this.handleID} />
                 </form>
+
 
                 <div>
                     {/* {Map goes here!} */}
-                    {this.state.pokemons.map((pokemon, id) =>
-                        <p key={id} value={pokemon.name} />
+                    {this.state.pokemon.map((pokemon) =>
+                        <div>
+                            <p key={pokemon.id}>{pokemon.name}</p>
+                            <img src={pokemon.img} alt='' />
+                        </div>
                     )}
                 </div>
             </div>
