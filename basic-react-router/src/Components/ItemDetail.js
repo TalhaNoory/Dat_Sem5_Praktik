@@ -12,22 +12,22 @@ function ItemDetail({ match }) {
     }, []) //<-- This will only run, when the component mounts
 
     const [item, setItem] = useState({
-        "types": [
-            {
-                "slot": "",
-                "type": {
-                    "name": "",
-                    "url": ""
-                }
-            },
-            {
-                "slot": "",
-                "type": {
-                    "name": "",
-                    "url": ""
-                }
-            }
-        ],
+        // "types": [
+        //     {
+        //         "slot": "",
+        //         "type": {
+        //             "name": "",
+        //             "url": ""
+        //         }
+        //     },
+        //     {
+        //         "slot": "",
+        //         "type": {
+        //             "name": "",
+        //             "url": ""
+        //         }
+        //     }
+        // ],
         "sprites":
         {
             "back_default": "",
