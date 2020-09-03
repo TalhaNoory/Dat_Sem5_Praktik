@@ -19,7 +19,7 @@ function Shop() {
 
   const fetchData = async () => {
     const data = await fetch(
-      `https://pokeapi.co/api/v2/pokemon?offset=0&limit=151`
+      `https://pokeapi.co/api/v2/pokemon?offset=0&limit=9"`
     );
 
     const items = await data.json();

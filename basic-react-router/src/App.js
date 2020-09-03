@@ -3,7 +3,7 @@ import './App.css';
 import Nav from './Components/Nav';
 import About from './Components/About';
 import Shop from './Components/Shop';
-import Picture from './Components/Picture'
+import ItemDetail from './Components/ItemDetail'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 function App() {
@@ -15,7 +15,7 @@ function App() {
           <Route path="/" exact component={Home} />
           <Route path="/about" component={About} />
           <Route path="/shop" exact component={Shop} />
-          <Route path="/shop/:id" component={Picture} />
+          <Route path="/shop/:id" component={ItemDetail} />
         </Switch>
       </div>
     </Router>
