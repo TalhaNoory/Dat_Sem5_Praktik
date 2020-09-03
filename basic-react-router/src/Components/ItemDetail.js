@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import '../App.css';
+import { Link } from 'react-router-dom'
 
 // State is holding the information that we getting from the API
 // Effect basically runs the fetch-call when our component mounts
 
-function ItemDetail() {
+function ItemDetail({ match }) {
 
     useEffect(() => {
         fetchItem();
@@ -27,31 +28,32 @@ function ItemDetail() {
                 }
             }
         ],
-        "sprites": {
-            "back_default":"",
-            "back_female":"",
-            "back_shiny":"",
-            "back_shiny_female":"",
-            "front_default":"",
-            "front_female":"",
-            "front_shiny":"",
-            "front_shiny_female":""
+        "sprites":
+        {
+            "back_default": "",
+            "back_female": "",
+            "back_shiny": "",
+            "back_shiny_female": "",
+            "front_default": "",
+            "front_female": "",
+            "front_shiny": "",
+            "front_shiny_female": ""
         }
     });
 
     const fetchItem = async () => {
         const fetchItem = await fetch(
-            `https://pokeapi.co/api/v2/pokemon/1`
+            `https://pokeapi.co/api/v2/pokemon/${match.params.id}`
         )
 
         const item = await fetchItem.json();
         setItem(item)
-        // console.log(item)
+        console.log(item)
     }
 
     return (
         <div>
-            <img src={item.sprites.back_default} alt=''></img>
+            <img src={item.sprites.front_default} alt=''></img>
         </div>
     );
 }
