@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import uuid from 'uuid/dist/esm-browser/v4'
+// import uuid from 'uuid/dist/esm-browser/v4'
+import cuid from 'cuid'
 import { Button, TextField } from '@material-ui/core'
 
 function TodoForm({ addTodo }) {
@@ -16,7 +17,7 @@ function TodoForm({ addTodo }) {
     function handleSubmit(event) {
         event.preventDefault();
         if (todo.task.trim()) {
-            addTodo({ ...todo, id: uuid() })
+            addTodo({ ...todo, id: cuid() })
             //reset task input
             setTodo({ ...todo, task: "" })
         }
