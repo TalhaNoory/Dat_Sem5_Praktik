@@ -1,0 +1,29 @@
+import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
+import "bootstrap/dist/css/bootstrap.min.css"
+import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
+import { ButtonContainer, NavWrapper } from './Button'
+
+export default class NavBar extends Component {
+    render() {
+        return (
+            <NavWrapper className="navbar navbar-expand-sm
+            navbar-dark px-sm-5">
+                <ul className="navbar-nav align-items-center">
+                    <li className="nav-item ml-5">
+                        <Link to='/'>
+                            Products
+                        </Link>
+                    </li>
+                </ul>
+                <Link to='/cart' className="ml-auto">
+                    <ButtonContainer>
+                        <span className="mr-2">
+                            <AddShoppingCartIcon />
+                        </span>
+                Min Kurv</ButtonContainer>
+                </Link>
+            </NavWrapper>
+        )
+    }
+}
