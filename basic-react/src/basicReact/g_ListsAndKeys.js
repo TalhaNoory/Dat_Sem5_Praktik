@@ -6,26 +6,26 @@ import React from 'react'
 
 // Transforming arrays into lists of 'elements'
 
-// function ListItem(props) {
+function ListItem(props) {
     //Correct There is no need to specify the key here:
-//     return <li>{props.value}</li>
-// }
+    return <li>{props.value}</li>
+}
 
-// function NumberList(props) {
-//     const numbers = props.numbers;
-//     const listItems = numbers.map((number) =>
+function NumberList(props) {
+    const numbers = props.numbers;
+    const listItems = numbers.map((number) =>
 //         //Correct! Key should be specified inside the array
-//         <ListItem key={number.toString()} value={number} />
+        <ListItem key={number.toString()} value={number} />
 
         //Old code, but same as the above, almost... -.-
-        // <li key={number.toString()}>
-        //     {number}
-        // </li>
-//     );
-//     return (
-//         <ul>{listItems}</ul>
-//     );
-// }
+        <li key={number.toString()}>
+            {number}
+        </li>
+    );
+    return (
+        <ul>{listItems}</ul>
+    );
+}
 
 // const numbers = [2, 4, 6, 8, 0];
 
