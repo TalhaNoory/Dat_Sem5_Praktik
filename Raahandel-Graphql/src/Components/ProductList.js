@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
-import Product from './Product'
-import Title from './Title'
-import { ProductConsumer } from '../Context'
+import React, { Component } from 'react';
+import Product from './Product';
+import Title from './Title';
+import { ProductConsumer } from '../Context';
 
 export default class ProductList extends Component {
     render() {
@@ -24,6 +24,6 @@ export default class ProductList extends Component {
                     </div>
                 </div>
             </React.Fragment>
-        )
+        );
     }
-}
+};

@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 export default function Title({ name, title }) {
     return (
@@ -10,5 +10,5 @@ export default function Title({ name, title }) {
                 </h1>
             </div>
         </div>
-    )
-}
+    );
+};

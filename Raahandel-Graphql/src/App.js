@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import './App.css'
-import NavBar from './Components/NavBar'
-import ProductList from './Components/ProductList'
-import Details from './Components/Details'
-import Cart from './Components/Cart'
-import DC from './Components/DefaultComponent'
+import './App.css';
+import NavBar from './Components/NavBar';
+import ProductList from './Components/ProductList';
+import Details from './Components/Details';
+import Cart from './Components/Cart';
+import DC from './Components/DefaultComponent';
 
-import { Switch, Route } from 'react-router-dom'
+import { Switch, Route } from 'react-router-dom';
 //1st import 'Switch' used for grouping a route
 //2nd import 'Route' displaying the specific route
 
@@ -16,7 +16,7 @@ class App extends Component {
     this.state = {
       user:[]
     }
-  }
+  };
 
   componentDidMount() {
     const query = `
@@ -43,7 +43,7 @@ class App extends Component {
         })
       })
       .catch(console.error);
-  }
+  };
 
   render() {
     return (
@@ -58,6 +58,6 @@ class App extends Component {
       </div>
     );
   }
-}
+};
 
 export default App;

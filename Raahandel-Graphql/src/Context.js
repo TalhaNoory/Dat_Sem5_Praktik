@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import { productList, detailProduct } from './data'
+import React, { Component } from 'react';
+import { productList, detailProduct } from './data';
 
 const ProductContext = React.createContext();
 //The Provider
@@ -19,7 +19,7 @@ class ProductProvider extends Component {
     //----------------------------------------------------------
     componentDidMount() {
         this.setProducts();
-    }
+    };
 
     setProducts = () => {
         let tempProducts = [];
@@ -29,25 +29,25 @@ class ProductProvider extends Component {
         });
         this.setState(() => {
             return { products: tempProducts }
-        })
-    }
+        });
+    };
     //----------------------------------------------------------
 
     getItem = (id) => {
-        const product = this.state.products.find(item => item.id === id)
+        const product = this.state.products.find(item => item.id === id);
         return product;
-    }
+    };
 
     handleDetail = (id) => {
         const product = this.getItem(id);
         this.setState(() => {
-            return {detailProduct: product}
-        })
-    }
+            return {detailProduct: product};
+        });
+    };
 
     addProductToCart = (id) => {
-        console.log(`The carts id is ${id}`)
-    }
+        console.log(`The carts id is ${id}`);
+    };
 
     render() {
         return (
@@ -58,10 +58,10 @@ class ProductProvider extends Component {
             }}>
                 {this.props.children}
             </ProductContext.Provider>
-        )
+        );
     }
-}
+};
 
 const ProductConsumer = ProductContext.Consumer;
 
-export { ProductProvider, ProductConsumer }
+export { ProductProvider, ProductConsumer };

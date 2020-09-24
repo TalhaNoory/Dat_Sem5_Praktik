@@ -1,9 +1,9 @@
-import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
-import { ProductWrapper } from './Button'
-import PropTypes from 'prop-types'
-import { ProductConsumer } from '../Context'
+import { ProductWrapper } from './Button';
+import PropTypes from 'prop-types';
+import { ProductConsumer } from '../Context';
 
 export default class Product extends Component {
     render() {
@@ -54,9 +54,9 @@ export default class Product extends Component {
                     </div>
                 </div>
             </ProductWrapper>
-        )
+        );
     }
-}
+};
 
 //Incase someone should mess up in the data section
 Product.propTypes = {
@@ -78,5 +78,5 @@ Product.propTypes = {
         descriptions: PropTypes.array,
         inCart: PropTypes.bool
     }).isRequired
-}
+};
 

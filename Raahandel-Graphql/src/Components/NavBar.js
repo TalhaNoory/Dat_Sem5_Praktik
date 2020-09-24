@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
-import "bootstrap/dist/css/bootstrap.min.css"
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
-import { ButtonContainer, NavWrapper } from './Button'
+import { ButtonContainer, NavWrapper } from './Button';
 
 export default class NavBar extends Component {
     render() {
@@ -24,6 +24,6 @@ export default class NavBar extends Component {
                 Min Kurv</ButtonContainer>
                 </Link>
             </NavWrapper>
-        )
+        );
     }
-}
+};

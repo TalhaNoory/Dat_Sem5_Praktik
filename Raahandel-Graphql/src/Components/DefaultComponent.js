@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
 export default class DefaultComponent extends Component {
     render() {
@@ -6,6 +6,6 @@ export default class DefaultComponent extends Component {
             <div>
                 <h3>Page NOT found!</h3>
             </div>
-        )
+        );
     }
-}
+};

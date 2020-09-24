@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
-import { ProductConsumer } from '../Context'
-import { Link } from 'react-router-dom'
-import { ButtonContainer } from './Button'
+import React, { Component } from 'react';
+import { ProductConsumer } from '../Context';
+import { Link } from 'react-router-dom';
+import { ButtonContainer } from './Button';
 
 export default class Details extends Component {
     render() {
@@ -72,6 +72,6 @@ export default class Details extends Component {
                     )
                 }}
             </ProductConsumer>
-        )
+        );
     }
-}
+};
