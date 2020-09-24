@@ -13,7 +13,6 @@ export default class Product extends Component {
                 quantity, inCart,
                 //producer, type, category, descriptions,
             } = this.props.product;
-        // console.log(this.props.product)
         return (
             <ProductWrapper
                 className="col-9 mx-auto col-md-6 col-lg-3 my-3">

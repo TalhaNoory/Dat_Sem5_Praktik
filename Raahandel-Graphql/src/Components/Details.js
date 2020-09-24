@@ -10,13 +10,13 @@ export default class Details extends Component {
                 {value => {
                     const
                         {
-                            id, producer, title, type,
-                            image, category, organic,
-                            cold, unit, unitSize,
+                            producer, title, type,
+                            image, category, 
+                            organic, unit, unitSize,
                             bulkUnit, bulkSize, price,
-                            descriptions, inCart
+                            descriptions,
+                            //id, cold, inCart
                         } = value.detailProduct;
-                        console.log(descriptions[0])
                     return (
                         <div className="container py-5">
                             {/* Title */}
