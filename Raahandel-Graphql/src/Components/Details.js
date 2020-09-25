@@ -11,8 +11,8 @@ export default class Details extends Component {
                     const
                         {
                             producer, title, type,
-                            image, category, 
-                            organic, unit, unitSize,
+                            image, category,
+                            organic, cold, unit, unitSize,
                             bulkUnit, bulkSize, price,
                             descriptions,
                             //id, cold, inCart
@@ -35,7 +35,8 @@ export default class Details extends Component {
                                 {/* Product text */}
                                 <div className="col-10 mx-auto col-md-6 my-3 text-capitalize">
                                     <h2>{type}</h2>
-                                    <h1>{organic? true : false}</h1>
+                                    {organic && <text style={{backgroundColor:"lightgreen"}}>Økologisk</text>}
+                                    {cold && <text style={{backgroundColor:"lightblue"}}>|Frost</text>}
                                     <h5>{category}</h5>
                                     <h4 className="text-title text-uppercase text-muted mt-3 mb-2">
                                         produceret af : <span className="text-uppercase">

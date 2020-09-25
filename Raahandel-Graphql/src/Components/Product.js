@@ -10,7 +10,7 @@ export default class Product extends Component {
         const
             {
                 id, title, image, price,
-                quantity, inCart,
+                quantity, organic, cold, inCart,
                 //producer, type, category, descriptions,
             } = this.props.product;
         return (
@@ -24,8 +24,10 @@ export default class Product extends Component {
                                     value.handleDetail(id)
                                 }>
                                 <Link to="/details">
-                                    <img src={image} alt="Product" className="card-img-top" />
+                                    <img src={image} alt="Product" className="card-img-top" />    
                                 </Link>
+                                {organic && <text style={{backgroundColor:"green"}}>Ø</text>}
+                                {cold && <text style={{backgroundColor:"lightblue"}}>F</text>}
                                 <button className="card-btn"
                                     disabled={inCart ? true : false}
                                     onClick={() => {
