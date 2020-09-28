@@ -36,7 +36,7 @@ export default class Details extends Component {
                                 <div className="col-10 mx-auto col-md-6 my-3 text-capitalize">
                                     <h2>{type}</h2>
                                     {organic && <text style={{backgroundColor:"lightgreen"}}>Økologisk</text>}
-                                    {cold && <text style={{backgroundColor:"lightblue"}}>|Frost</text>}
+                                    {cold && <text style={{backgroundColor:"lightblue"}}> Frost</text>}
                                     <h5>{category}</h5>
                                     <h4 className="text-title text-uppercase text-muted mt-3 mb-2">
                                         produceret af : <span className="text-uppercase">
@@ -44,7 +44,7 @@ export default class Details extends Component {
                                     </h4>
                                     <h3 className="text-blue">
                                         <strong>
-                                            pris: <span>kr./ </span>{price}
+                                            pris: <span>kr./ </span>{price.toFixed(2).toString().replace(".", ",")}
                                         </strong>
                                     </h3>
                                     <h5 className="text-blue">

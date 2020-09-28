@@ -20,14 +20,14 @@ export default class Product extends Component {
                     <ProductConsumer>
                         {(value) => (
                             <div className="img-container p-5"
-                                onClick={() => 
+                                onClick={() =>
                                     value.handleDetail(id)
                                 }>
                                 <Link to="/details">
-                                    <img src={image} alt="Product" className="card-img-top" />    
+                                    <img src={image} alt="Product" className="card-img-top" />
                                 </Link>
-                                {organic && <text style={{backgroundColor:"green"}}>Ø</text>}
-                                {cold && <text style={{backgroundColor:"lightblue"}}>F</text>}
+                                {organic && <text style={{ backgroundColor: "green" }}>Ø</text>}
+                                {cold && <text style={{ backgroundColor: "lightblue" }}>F</text>}
                                 <button className="card-btn"
                                     disabled={inCart ? true : false}
                                     onClick={() => {
@@ -48,7 +48,7 @@ export default class Product extends Component {
                     <div className="card-footer d-flex justify-content-between">
                         <p className="align-self-center mb-0">{title}</p>
                         <h5 className="text-blue font-italic mb-0">
-                            <span className="mr-1">{price}./kr.</span>
+                            <number className="mr-1">{price.toFixed(2).toString().replace(".", ",")} /kr.</number>
                         </h5>
                         <h5 className="text-blue font-italic mb-0">
                             <span className="mr-1"> qty:</span>{quantity}
