@@ -57,7 +57,7 @@ export default class Details extends Component {
                                     <p className="text-capitalize font-weight-bold mt-3 mb-0">
                                         Om produktet :
                                     </p>
-                                    <p className="text-muted lead">{descriptions[{}]}</p>
+                                    <p className="text-muted lead">{descriptions.good[{}]}</p>
                                     {/* End Product text */}
                                     {/* Button */}
                                     <div>

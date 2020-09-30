@@ -15,7 +15,7 @@ export default class Details extends Component {
                             organic, cold, unit,
                             bulkUnit, bulkSize, price,
                             descriptions,
-                            //id, unitSize, inCart
+                            //id, unitSize inCart
                         } = value.detailProduct;
                     const bulkSizePrice = bulkSize * price;
                     return (
