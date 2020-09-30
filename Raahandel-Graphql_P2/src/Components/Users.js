@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { ProductWrapper } from '../Button'
 
 export default class Users extends Component {
     constructor(props) {
@@ -40,7 +41,21 @@ export default class Users extends Component {
                 {this.state.user !== undefined
                     ? this.state.user.map((user) => (
                         <div key={user.id}>
-                            {user.mail}
+                            <ProductWrapper
+                                className="col-9 mx-auto col-md-6 col-lg-3 my-3">
+                                <div className="card">
+                                    {/* footer for the cart! */}
+                                    <div className="card-footer d-flex justify-content-between">
+                                        {user.mail}
+                                    </div>
+                                    <div className="card-footer d-flex justify-content-between">
+                                        {user.name}
+                                    </div>
+                                    <div className="card-footer d-flex justify-content-between">
+                                        {user.role}
+                                    </div>
+                                </div>
+                            </ProductWrapper>
                         </div>
                     )) : null}
             </div>

@@ -5,6 +5,7 @@ import {Switch, Route} from 'react-router-dom'
 import user from './Components/Users'
 import product from './Components/Products'
 import DC from './Components/DefaultComponent'
+import home from './Components/Home'
 
 export default class App extends Component {
   render() {
@@ -13,6 +14,7 @@ export default class App extends Component {
       <div>
         <NavBar />
         <Switch>
+          <Route path='/home' exact component={home}></Route>
           <Route path='/users' exact component={user}></Route>
           <Route path='/products' exact component={product}></Route>
           <Route component={DC}></Route>
