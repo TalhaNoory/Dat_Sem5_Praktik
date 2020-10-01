@@ -10,5 +10,5 @@ export default function Title({ name, title }) {
                 </h1>
             </div>
         </div>
-    );
+    )
 };

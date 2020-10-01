@@ -1,12 +1,12 @@
-import React, { Component } from 'react'
-import { ProductWrapper } from '../Button'
+import React, { Component } from 'react';
+import { ProductWrapper } from '../Button';
 
 export default class Users extends Component {
     constructor(props) {
         super(props);
         this.state = {
             user: []
-        }
+        };
     };
 
     componentDidMount() {
@@ -61,4 +61,4 @@ export default class Users extends Component {
             </div>
         )
     }
-}
+};

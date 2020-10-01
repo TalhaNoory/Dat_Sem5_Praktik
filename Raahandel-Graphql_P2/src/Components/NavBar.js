@@ -10,7 +10,7 @@ export default class NavBar extends Component {
             navbar-dark px-sm-5">
                 <ul className="navbar-nav align-items-center">
                     <li className="nav-item ml-5">
-                        <Link to='/home'>
+                        <Link to='/'>
                             Home
                         </Link>
                     </li>
@@ -30,6 +30,6 @@ export default class NavBar extends Component {
                     </li>
                 </ul>
             </NavWrapper>
-        );
+        )
     }
 };

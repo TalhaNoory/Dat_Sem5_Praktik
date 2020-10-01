@@ -17,8 +17,7 @@ transition: all 0.5s ease-in-out;
 }
 &:focus {
     outline: none;
-}
-`;
+}`;
 
 export const NavWrapper = styled.nav`
 background:var(--mainBlue);
@@ -27,8 +26,7 @@ background:var(--mainBlue);
     font-size:1.3rem;
     ${'' /* 1 rem = 20px */}
     text-transform: capitalize;
-}
-`;
+}`;
 
 export const ProductWrapper = styled.div`
 .card{
@@ -79,5 +77,4 @@ ${'' /* Code below, is gonna happen if im hovering 'ProductWrapper' */}
 .cart-btn:hover{
     color: var(--mainBlue);
     cursor: pointer;
-}
-`;
+}`;
