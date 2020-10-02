@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import { ButtonContainer } from '../Button';
 
 export default class Details extends Component {
     constructor(props) {
@@ -45,7 +47,13 @@ export default class Details extends Component {
             .catch(console.error);
     };
 
+    // bulkSizePrice() {
+    //     const bulkSizePrice = this.state.products.bulkSize * this.state.products.price
+    //     return bulkSizePrice;
+    // }
+
     render() {
+        // console.log(this.state.products)
         return (
             <div>
                 {this.state.products !== undefined
@@ -68,8 +76,8 @@ export default class Details extends Component {
                                     {/* Product text */}
                                     <div className="col-10 mx-auto col-md-6 my-3 text-capitalize">
                                         <h2>{products.type}</h2>
-                                        {products.organic && <text style={{ backgroundColor: "lightgreen" }}>Økologisk</text>}
-                                        {products.cold && <text style={{ backgroundColor: "lightblue" }}> Frost</text>}
+                                        {products.organic && <div style={{ backgroundColor: "lightgreen" }}>Økologisk</div>}
+                                        {products.cold && <div style={{ backgroundColor: "lightblue" }}> Frost</div>}
                                         <h5>{products.category}</h5>
                                         <h4 className="text-title text-uppercase text-muted mt-3 mb-2">
                                             produceret af : <span className="text-uppercase">
@@ -83,14 +91,20 @@ export default class Details extends Component {
                                         </h3>
                                         <h5 className="text-blue">
                                             <strong>
-                                                {products.bulkUnit}{": kr,-"} {products.bulkSizePrice.toFixed(2).toString().replace(".", ",")}
+                                                {products.bulkUnit}{": kr,-"} {}
                                             </strong>
                                         </h5>
                                         <p className="text-capitalize font-weight-bold mt-3 mb-0">
                                             Om produktet :
                                     </p>
-                                        <p className="text-muted lead">{products.descriptions.good[{}]}</p>
+                                        <p className="text-muted lead"></p>
                                         {/* End Product text */}
+                                        {/* Button */}
+                                        <div>
+                                            <Link to='/products'>
+                                                <ButtonContainer>Tilbage til varer</ButtonContainer>
+                                            </Link>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
