@@ -82,8 +82,6 @@ export default class Products extends Component {
     }
 };
 
-//Kode til id-billede
-
 // getItem = (id) => {
 //     const product = this.state.products.find(item => item.id === id);
 //     return product;
