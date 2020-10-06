@@ -67,7 +67,10 @@ export default class Products extends Component {
                                     <div className="card-footer d-flex justify-content-between">
                                         <p className="align-self-center mb-0">{products.title}</p>
                                         <h5 className="text-blue font-italic mb-0">
-                                            <div className="mr-1">{products.price.toFixed(2).toString().replace(".", ",")} /kr.</div>
+                                            <div className="mr-1">
+                                                kr,- {" "}
+                                                {products.price.toFixed(2).toString().replace(".", ",")}
+                                            </div>
                                         </h5>
                                         <h5 className="text-blue font-italic mb-0">
                                             <span className="mr-1"> qty:</span>{products.quantity}
