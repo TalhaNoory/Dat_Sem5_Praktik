@@ -3,38 +3,38 @@
 module.exports = {
     users: [
         {
-            mail: 'Reiner@hotmail.com',
             id: 'ckf2seoiubsevnobawobfbnew',
+            mail: 'Reiner@hotmail.com',
             name: 'Kunde B',
             role: 'COSTUMER'
         },
         {
-            mail: 'ErenJaeegr@hotmail.com',
             id: 'ckf2aggbo000101ji0cs6hovq',
+            mail: 'ErenJaeegr@hotmail.com',
             name: 'Producent A',
             role: 'PRODUCER'
         },
         {
-            mail: 'NarutoUzumaki@gmail.com',
             id: 'ckf2ahcl4000301jih9coc1if',
+            mail: 'NarutoUzumaki@gmail.com',
             name: 'Producent B',
             role: 'PRODUCER'
         },
         {
-            mail: 'Saitama@mail.com',
             id: 'ckf2ahhsr000501jiexz4hfa9',
+            mail: 'Saitama@mail.com',
             name: 'Producent C',
             role: 'PRODUCER'
         },
         {
-            mail: 'Gatz@gmail.com',
             id: 'ckf2ahls0000701jick98er7i',
+            mail: 'Gatz@gmail.com',
             name: 'Producent D',
             role: 'PRODUCER'
         },
         {
-            mail: 'LeviAckermann@hotmail.com',
             id: 'ckf2ahphm000901ji4jdccjvu',
+            mail: 'LeviAckermann@hotmail.com',
             name: 'Kunde A',
             role: 'CUSTOMER'
         },

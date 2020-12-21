@@ -57,7 +57,7 @@ export default class Products extends Component {
                                 className="col-9 mx-auto col-md-6 col-lg-3 my-3">
                                 <div className="card">
                                     <div className="img-container p-5">
-                                        <Link to="/details">
+                                        <Link to={`/details/${products}/${products.id}`}>
                                             <img src={products.image} alt="Product" className="card-img-top" />
                                         </Link>
                                         {products.organic && <div style={{ backgroundColor: "green" }}>Ø</div>}

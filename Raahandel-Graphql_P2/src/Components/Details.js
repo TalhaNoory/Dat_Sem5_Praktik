@@ -1,19 +1,20 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { ButtonContainer } from "../Button";
+import userInfo from './Users'
 
 export default class Details extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      products: [],
+      products: []
     };
   }
 
   componentDidMount() {
     const query = `
-        query {
-            allProducts {
+        query Product($id: ID!) {
+            Product(id:$id) {
               id 
               producer 
               title 
@@ -36,20 +37,21 @@ export default class Details extends Component {
     const opts = {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ query }),
+      body: JSON.stringify({ query, variables: { id: this.props.match.params.id } }),
     };
     fetch(url, opts)
       .then((res) => res.json())
       .then((result) => {
+        // console.log(result)
         this.setState({
-          products: result.data.allProducts,
+          products: [result.data.Product]
         });
       })
       .catch(console.error);
   }
 
   render() {
-    // console.log(this.state.products)
+    console.log()
     return (
       <div>
         {this.state.products !== undefined
@@ -93,7 +95,13 @@ export default class Details extends Component {
                     <h4 className="text-title text-uppercase text-muted mt-3 mb-2">
                       produceret af :{" "}
                       <span className="text-uppercase">
+                      <Link to={`/userinfo/}`}>
                         {products.producer}
+                      </Link>
+                      {/* {this.state.user.map((user) =>
+                      <Link to={`/userinfo/:${user.id}`}>
+                        {products.producer}
+                      </Link>)} */}
                       </span>
                     </h4>
                     <h3 className="text-blue">

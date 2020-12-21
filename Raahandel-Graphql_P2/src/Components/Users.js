@@ -13,8 +13,8 @@ export default class Users extends Component {
         const query = `
         query {
           allUsers {
-            mail
             id
+            mail
             name
             role
           }
@@ -47,12 +47,6 @@ export default class Users extends Component {
                                     {/* footer for the cart! */}
                                     <div className="card-footer d-flex justify-content-between">
                                         {user.mail}
-                                    </div>
-                                    <div className="card-footer d-flex justify-content-between">
-                                        {user.name}
-                                    </div>
-                                    <div className="card-footer d-flex justify-content-between">
-                                        {user.role}
                                     </div>
                                 </div>
                             </ProductWrapper>
